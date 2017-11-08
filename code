@@ -1,0 +1,23 @@
+//Program by Sandeep Choudhary
+import java.util.*;
+public class Throw {
+public static void main(String []args)
+{
+Scanner scan=new Scanner(System.in);
+System.out.println("Enter the Available balance :");
+int Bal=scan.nextInt();
+System.out.println("Enter the transaction amount :");
+int withdrawlamount=scan.nextInt();
+
+try
+{
+if (withdrawlamount>Bal)
+throw new ArithmeticException("Insufficient Balance");
+Bal=Bal-withdrawlamount;
+System.out.println("Transaction Sucessful\nAvailable Balance : "+Bal);
+}catch(ArithmeticException e)
+{System.out.println("Transaction Failed : "+e.getMessage());}
+System.out.println("Insert Your ATM card");
+}
+
+}
